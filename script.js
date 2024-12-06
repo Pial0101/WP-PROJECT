@@ -56,7 +56,7 @@ function bookAppointment() {
             allDay: false
         });
 
-        // Send reminder (simulated)
+        // Send reminder
         setTimeout(() => {
             alert(`Reminder: Your appointment with ${doctor} is scheduled for ${date} at ${time}.`);
         }, 5000); // reminder after 5 seconds for demo purposes
