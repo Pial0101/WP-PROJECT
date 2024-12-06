@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Doctor Appointment Booking</h1>
+
+        <!-- User Authentication -->
+        <div id="authSection">
+            <h3>Login</h3>
+            <input type="text" id="username" placeholder="Enter your name" />
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- Appointment Form -->
+        <div id="appointmentSection" style="display:none;">
+            <h3>Book an Appointment</h3>
+            <label for="doctor">Select Doctor:</label>
+            <select id="doctor" name="doctor" onchange="updateAvailableSlots()">
+                <option value="Dr. Smith">Dr. Smith - Cardiologist</option>
+                <option value="Dr. Brown">Dr. Brown - Dentist</option>
+                <option value="Dr. Lee">Dr. Lee - Pediatrician</option>
+            </select>
+
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required />
+
+            <label for="time">Select Time:</label>
+            <select id="time" name="time"></select>
+
+            <label for="patientName">Patient Name:</label>
+            <input type="text" id="patientName" name="patientName" required />
+
+            <button onclick="bookAppointment()">Book Appointment</button>
+        </div>
+
+        <h2>Upcoming Appointments</h2>
+        <ul id="appointmentsList"></ul>
+
+        <!-- Calendar Integration -->
+        <h2>Calendar</h2>
+        <div id="calendar"></div>
+
+        <!-- Payment Section -->
+        <div id="paymentSection">
+            <button onclick="simulatePayment()">Pay Now</button>
+            <p id="paymentStatus"></p>
+        </div>
+
+        <div id="appointmentHistorySection">
+            <button onclick="viewAppointmentHistory()">View Appointment History</button>
+            <ul id="appointmentHistoryList"></ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
